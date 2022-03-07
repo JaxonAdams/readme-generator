@@ -8,6 +8,7 @@ const projectQuestions = [];
 
 // Ask user questions
 const promptUserQuestions = () => {
+
     return inquirer.prompt([
         {
             type: 'input',
@@ -28,7 +29,12 @@ const promptUserQuestions = () => {
 }
 
 // Ask project questions
-const promptProjectQuestions = () => {
+const promptProjectQuestions = readmeData => {
+    // If there is no array of project info, create one
+    if (!readmeData.projectInfo) {
+        readmeData.projectInfo = [];
+    }
+
     console.log(`
 =====================
  Project Information
@@ -142,7 +148,14 @@ const promptProjectQuestions = () => {
             message: 'Please select which license you would like this project covered under.',
             choices: ['Creative Commons', 'GNU', 'MIT', 'SIL', 'No License']
         }
-    ]);
+    ])
+    .then(
+        projectData => {
+            readmeData.projectInfo.push(projectData);
+
+            console.log(readmeData);
+        }
+    );
 };
 
 // Function call to initialize app
