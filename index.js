@@ -1,5 +1,6 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
+const generateMarkdown = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
 
@@ -154,10 +155,14 @@ const promptProjectQuestions = readmeData => {
             readmeData.projectInfo.push(projectData);
 
             console.log(readmeData);
+            return readmeData;
         }
     );
 };
 
 // Function call to initialize app
 promptUserQuestions()
-    .then(promptProjectQuestions);
+    .then(promptProjectQuestions)
+    .then(readmeData => {
+        return generateMarkdown(readmeData);
+    });
