@@ -14,17 +14,38 @@ const promptUserQuestions = () => {
         {
             type: 'input',
             name: 'name',
-            message: 'What is your name? (Required)'
+            message: 'What is your name? (Required)',
+            validate: validateNameInput => {
+                if (validateNameInput) {
+                    return true;
+                } else {
+                    console.log('Please enter your name.');
+                }
+            }
         },
         {
             type: 'input',
             name: 'username',
-            message: 'What is your GitHub username? (Required)'
+            message: 'What is your GitHub username? (Required)',
+            validate: validateUsernameInput => {
+                if (validateUsernameInput) {
+                    return true;
+                } else {
+                    console.log('Please enter your username.');
+                }
+            }
         },
         {
             type: 'input',
             name: 'email',
-            message: 'What is your email? (Required)'
+            message: 'What is your email? (Required)',
+            validate: validateEmailInput => {
+                if (validateEmailInput) {
+                    return true;
+                } else {
+                    console.log('Please enter your email.');
+                }
+            }
         },
     ]);
 }
@@ -46,12 +67,26 @@ const promptProjectQuestions = readmeData => {
         {
             type: 'input',
             name: 'title',
-            message: 'What is the name of your project?'
+            message: 'What is the name of your project?',
+            validate: validateTitleInput => {
+                if (validateTitleInput) {
+                    return true;
+                } else {
+                    console.log('Please enter your project title.');
+                }
+            }
         },
         {
             type: 'input',
             name: 'repoLocation',
-            message: 'Please enter your repository location. For example: OneDrive/Desktop/repos/<project-folder>'
+            message: 'Please enter your repository location. For example: OneDrive/Desktop/repos/<project-folder>',
+            validate: validateLocationInput => {
+                if (validateLocationInput) {
+                    return true;
+                } else {
+                    console.log('Please enter your repository location.');
+                }
+            }
         },
         {
             type: 'confirm',
