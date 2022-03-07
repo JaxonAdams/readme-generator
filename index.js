@@ -47,29 +47,94 @@ const promptProjectQuestions = () => {
             message: 'Please enter your repository location. For example: OneDrive/Desktop/repos/<project-folder>'
         },
         {
+            type: 'confirm',
+            name: 'confirmDescription',
+            message: 'Would you like to add a project description?',
+            default: false,
+        },
+        {
             type: 'input',
             name: 'description',
-            message: 'Please enter a description of your project. Leave blank to exclude from README.'
+            message: 'Please enter a description of your project.',
+            when: ({ confirmDescription }) => {
+                if (confirmDescription) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'confirm',
+            name: 'confirmInstallation',
+            message: 'Would you like to add information on installation?',
+            default: false,
         },
         {
             type: 'input',
             name: 'installation',
-            message: 'Please enter information on how to install your product. Leave blank to exclude from README.'
+            message: 'Please enter information on how to install your product.',
+            when: ({ confirmInstallation }) => {
+                if (confirmInstallation) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'confirm',
+            name: 'confirmUsage',
+            message: 'Would you like to add information on usage?',
+            default: false,
         },
         {
             type: 'input',
             name: 'usage',
-            message: 'Please enter information on how to use your product. Leave blank to exclude from README.'
+            message: 'Please enter information on how to use your product.',
+            when: ({ confirmUsage }) => {
+                if (confirmUsage) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'confirm',
+            name: 'confirmContributions',
+            message: 'Would you like to add contribution information?',
+            default: false,
         },
         {
             type: 'input',
             name: 'contributions',
-            message: 'Please enter information on how to contribute to the project. Leave blank to exclude from README.'
+            message: 'Please enter information on how to contribute to the project.',
+            when: ({ confirmContributions }) => {
+                if (confirmContributions) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'confirm',
+            name: 'confirmTests',
+            message: 'Would you like to add testing information?',
+            default: false,
         },
         {
             type: 'input',
             name: 'tests',
-            message: 'Please enter information regarding tests concerning this project. Leave blank to exclude from README.'
+            message: 'Please enter information regarding tests concerning this project.',
+            when: ({ confirmTests }) => {
+                if (confirmTests) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
         },
         {
             type: 'list',
