@@ -12,7 +12,57 @@ function renderLicenseBadge(license) {
   } else if (license === 'SIL') {
     return '[![License: Open Font-1.1](https://img.shields.io/badge/License-OFL_1.1-lightgreen.svg)](https://opensource.org/licenses/OFL-1.1)';
   }
-}
+};
+
+const tocDescription = data => {
+  const latestInfo = data.projectInfo.length - 1;
+
+  if (data.projectInfo[latestInfo].confirmDescription) {
+    return ' - Description';
+  } else {
+    return '';
+  }
+};
+
+const tocInstallation = data => {
+  const latestInfo = data.projectInfo.length - 1;
+
+  if (data.projectInfo[latestInfo].confirmInstallation) {
+    return ' - Installation';
+  } else {
+    return '';
+  }
+};
+
+const tocUsage = data => {
+  const latestInfo = data.projectInfo.length - 1;
+
+  if (data.projectInfo[latestInfo].confirmInstallation) {
+    return ' - Usage';
+  } else {
+    return '';
+  }
+};
+
+const tocContributions = data => {
+  const latestInfo = data.projectInfo.length - 1;
+
+  if (data.projectInfo[latestInfo].confirmInstallation) {
+    return ' - Contributions';
+  } else {
+    return '';
+  }
+};
+
+const tocTests = data => {
+  const latestInfo = data.projectInfo.length - 1;
+
+  if (data.projectInfo[latestInfo].confirmInstallation) {
+    return ' - Tests';
+  } else {
+    return '';
+  }
+};
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
@@ -22,7 +72,12 @@ function generateMarkdown(data) {
   return `
 ${licenseBadgeAndLink}
 # ${data.projectInfo[latestInfo].title}
-
+## Table of Contents
+${tocDescription(data)}
+${tocInstallation(data)}
+${tocUsage(data)}
+${tocContributions(data)}
+${tocTests(data)}
 `;
 }
 
