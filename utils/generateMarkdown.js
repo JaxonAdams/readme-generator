@@ -1,4 +1,3 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if (license === 'No License') {
@@ -19,7 +18,7 @@ const tocDescription = data => {
   const latestInfo = data.projectInfo.length - 1;
 
   if (data.projectInfo[latestInfo].confirmDescription) {
-    return ' - Description';
+    return ' - [Description](##description)';
   } else {
     return '';
   }
@@ -29,7 +28,7 @@ const tocInstallation = data => {
   const latestInfo = data.projectInfo.length - 1;
 
   if (data.projectInfo[latestInfo].confirmInstallation) {
-    return ' - Installation';
+    return ' - [Installation](##installation)';
   } else {
     return '';
   }
@@ -39,7 +38,7 @@ const tocUsage = data => {
   const latestInfo = data.projectInfo.length - 1;
 
   if (data.projectInfo[latestInfo].confirmUsage) {
-    return ' - Usage';
+    return ' - [Usage](##usage)';
   } else {
     return '';
   }
@@ -49,7 +48,7 @@ const tocContributions = data => {
   const latestInfo = data.projectInfo.length - 1;
 
   if (data.projectInfo[latestInfo].confirmContributions) {
-    return ' - Contributions';
+    return ' - [Contributions](##contributions)';
   } else {
     return '';
   }
@@ -59,7 +58,7 @@ const tocTests = data => {
   const latestInfo = data.projectInfo.length - 1;
 
   if (data.projectInfo[latestInfo].confirmTests) {
-    return ' - Tests';
+    return ' - [Tests](##tests)';
   } else {
     return '';
   }

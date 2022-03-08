@@ -1,12 +1,6 @@
-// TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 const writeFile = require('./utils/writeFile.js');
-
-// TODO: Create an array of questions for user input
-
-
-const projectQuestions = [];
 
 // Ask user questions
 const promptUserQuestions = () => {
