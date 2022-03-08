@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown.js');
+const writeFile = require('./utils/writeFile.js');
 
 // TODO: Create an array of questions for user input
 
@@ -73,18 +74,6 @@ const promptProjectQuestions = readmeData => {
                     return true;
                 } else {
                     console.log('Please enter your project title.');
-                }
-            }
-        },
-        {
-            type: 'input',
-            name: 'repoLocation',
-            message: 'Please enter your repository location. For example: OneDrive/Desktop/repos/<project-folder>',
-            validate: validateLocationInput => {
-                if (validateLocationInput) {
-                    return true;
-                } else {
-                    console.log('Please enter your repository location.');
                 }
             }
         },
@@ -200,4 +189,13 @@ promptUserQuestions()
     .then(promptProjectQuestions)
     .then(readmeData => {
         return generateMarkdown(readmeData);
+    })
+    .then(fileMarkDown => {
+        writeFile(fileMarkDown);
+    })
+    .then(writeFileResponse => {
+        console.log('Readme Written!');
+    })
+    .catch(err => {
+        console.log(err);
     });

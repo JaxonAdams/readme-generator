@@ -21,7 +21,7 @@ function generateMarkdown(data) {
   const licenseBadgeAndLink = renderLicenseBadge(data.projectInfo[latestInfo].license);
   return `
 ${licenseBadgeAndLink}
-# ${data.title}
+# ${data.projectInfo[latestInfo].title}
 
 `;
 }
