@@ -2,9 +2,9 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 # README Generator
 ## Table of Contents
- - [Description](##description)
- - [Installation](##installation)
- - [Usage](##usage)
+ - [Description](#description)
+ - [Installation](#installation)
+ - [Usage](#usage)
 
 
 
