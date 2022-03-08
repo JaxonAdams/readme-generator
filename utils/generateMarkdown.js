@@ -18,7 +18,7 @@ const tocDescription = data => {
   const latestInfo = data.projectInfo.length - 1;
 
   if (data.projectInfo[latestInfo].confirmDescription) {
-    return ' - [Description](##description)';
+    return ' - [Description](#description)';
   } else {
     return '';
   }
@@ -28,7 +28,7 @@ const tocInstallation = data => {
   const latestInfo = data.projectInfo.length - 1;
 
   if (data.projectInfo[latestInfo].confirmInstallation) {
-    return ' - [Installation](##installation)';
+    return ' - [Installation](#installation)';
   } else {
     return '';
   }
@@ -38,7 +38,7 @@ const tocUsage = data => {
   const latestInfo = data.projectInfo.length - 1;
 
   if (data.projectInfo[latestInfo].confirmUsage) {
-    return ' - [Usage](##usage)';
+    return ' - [Usage](#usage)';
   } else {
     return '';
   }
@@ -48,7 +48,7 @@ const tocContributions = data => {
   const latestInfo = data.projectInfo.length - 1;
 
   if (data.projectInfo[latestInfo].confirmContributions) {
-    return ' - [Contributions](##contributions)';
+    return ' - [Contributions](#contributions)';
   } else {
     return '';
   }
@@ -58,7 +58,7 @@ const tocTests = data => {
   const latestInfo = data.projectInfo.length - 1;
 
   if (data.projectInfo[latestInfo].confirmTests) {
-    return ' - [Tests](##tests)';
+    return ' - [Tests](#tests)';
   } else {
     return '';
   }
