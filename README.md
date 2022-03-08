@@ -15,6 +15,8 @@ This is a node app that automatically generates a readme file based on user inpu
 
 ## Installation
 To install, simply clone this repository. If any errors occur while the app is running, try installing Node.js from [the official website](https://nodejs.org). If you have any questions or concerns, please reach out to me through the Questions section below.
+[![readme-generator](https://user-images.githubusercontent.com/96997462/157157886-e33fd1f6-5623-4246-a90d-692cf2480416.JPG)](./utils/tutorial.mp4)
+Click the image above to view a tutorial video! (You may have to click 'View raw' and download the video to watch it.) You can also find this tutorial video in the utils folder after you have cloned the repository.
     
 
 ## Usage
